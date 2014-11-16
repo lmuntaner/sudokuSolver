@@ -1,0 +1,133 @@
+
+/*----Header----*/
+
+.header {
+	background-color: #2d3538;
+	width: 100%;
+	height: 70px;
+	color: #EEE;
+	position: relative;
+}
+
+.header h1 {
+	text-align: center;
+	margin: 0;
+	padding-top: 20px;
+}
+
+/*----Content to solve----*/
+
+.solve h1 {
+	text-align: center;
+	margin-top: 50px;
+}
+
+.table_sudoku {
+	margin-left: 345px;
+	margin-bottom: 50px;
+}
+
+.table_sudoku input {
+	width: 30px;
+	height: 30px;
+	border: none;
+	background-color: #EEE;
+	text-align: center;
+	font-size: 0.9em;
+}
+
+.solve p {
+	text-align: center;
+}
+
+.solve ul {
+	text-align: center;
+	list-style: none;
+}
+
+.solve_left {
+	border-left: 2px solid black;
+}
+
+.solve_top {
+	border-top: 2px solid black;
+}
+
+.cell-solve {
+  background-color: yellow;
+}
+
+/*----Buttons----*/
+
+.buttons {
+	margin-bottom: 20px;
+	background-color: #EEE;
+	border-radius: 3px;
+	height: 50px;
+}
+
+.buttons input {
+	margin-top: 11px;
+	width: 50px;
+	font-size: 0.9em;
+}
+
+#fill_button {
+	margin-left: 50px;
+}
+
+#h_button {
+	margin-left: 300px;
+}
+
+#solve_button {
+	float: right;
+	margin-right: 50px;
+}
+
+/*----Content solving----*/
+
+.sudoku_solving h2 {
+	text-align: center;
+	margin: 30px 0;
+}
+
+.sudoku_solving input {
+	width: 20px;
+	text-align: center;
+	font-size: 0.8em;
+}
+
+.sudoku_solving table {
+	margin-top: 20px;
+	margin-left: 40px;
+	margin-bottom: 20px;
+}
+
+.sudoku_solving h3 {
+	text-align: center;
+}
+
+.sum {
+	border: none;
+}
+
+.sum--1 {
+	color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
