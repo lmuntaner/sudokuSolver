@@ -53,14 +53,18 @@
 	border-top: 2px solid black;
 }
 
-.cell-solve {
-  background-color: yellow;
+.table_sudoku .collateral {
+  background-color: lightyellow;
+}
+
+.table_sudoku .to-set {
+	background-color: yellow;
 }
 
 /*----Buttons----*/
 
 .buttons {
-	margin-bottom: 20px;
+	margin: 0 auto 20px;
 	background-color: #EEE;
 	border-radius: 3px;
 	height: 50px;
@@ -70,17 +74,26 @@
 	margin-top: 11px;
 	width: 50px;
 	font-size: 0.9em;
+	float: left;
 }
 
-#fill_button {
+.buttons input:first-child {
 	margin-left: 50px;
 }
 
-#h_button {
-	margin-left: 300px;
+.buttons .faker {
+	width: 80px;
 }
 
-#solve_button {
+.buttons .solving {
+	margin-left: 30px;
+}
+
+#h-button {
+	margin-left: 50px;
+}
+
+#solve {
 	float: right;
 	margin-right: 50px;
 }
