@@ -12,8 +12,7 @@
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
 	<meta name="description" content="Sudoku Solver" />
 	<meta name="keywords" content="sudoku, sudoku solver, solucionar sudoku, solucionador sudoku, sudokus" />
 	<meta name="author" content="Llorenc" />
@@ -24,9 +23,10 @@
   <link rel="stylesheet" href="css/cover.css" type="text/css" media="screen">
   <link rel="stylesheet" href="css/sudoku.css" type="text/css" media="screen">
 	<link rel="shortcut icon" type="text/css" href="imagenes/favicon.ico" />
-
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -92,18 +92,20 @@
               </tr>
             </table>
           </div>
-          <div class="general-buttons">
-      			<input id="h-button" class="solving btn" type="button" name="H" value="H">
-      			
-      			<input id="v-button" class="solving btn" type="button" name="V" value="V">
-      			
-      			<input id="d-button" class="solving btn" type="button" name="I" value="I">
-      			
-      			<input id="q-button" class="solving btn" type="button" name="Q" value="Q">
-      			
+          <div class="solving-buttons">
+            <h3>Solve by step</h3>
+            <table>
+              <tr>
+                <td><input id="h-button" class="solving btn btn-danger" type="button" name="H" value="H"></td>
+                <td><input id="v-button" class="solving btn btn-danger" type="button" name="V" value="V"></td>
+              </tr>
+              <tr>
+                <td><input id="d-button" class="solving btn btn-danger" type="button" name="I" value="I"></td>
+                <td><input id="q-button" class="solving btn btn-danger" type="button" name="Q" value="Q"></td>
+              </tr>
+            </table>
+            <input id="solve" class="btn btn-danger" type="button" name="Solve" value="Solve">
           </div>
-          <!-- <input id="fill-solver-matrix" class="btn" type="button" name="Fill" value="Fill"> -->
-    			<input id="solve" class="btn" type="button" name="Solve" value="Solve">
         </div>
       </div>
 
@@ -118,32 +120,8 @@
   </div>
 
 </div>
-<!-- Sudoku to solve -->
 
 <div class="container">
-  <div class="grid_100 solve">
-  	<h1>Sudoku to solve</h1>
-  	<div class="table_sudoku">
-  		<table><tr><td><input type='text' name='number' id='0-0' /></td><td><input type='text' name='number' id='0-1' /></td><td><input type='text' name='number' id='0-2' /></td><td class='solve_left'><input type='text' name='number' id='0-3' /></td><td><input type='text' name='number' id='0-4' /></td><td><input type='text' name='number' id='0-5' /></td><td class='solve_left'><input type='text' name='number' id='0-6' /></td><td><input type='text' name='number' id='0-7' /></td><td><input type='text' name='number' id='0-8' /></td></tr><tr><td><input type='text' name='number' id='1-0' /></td><td><input type='text' name='number' id='1-1' /></td><td><input type='text' name='number' id='1-2' /></td><td class='solve_left'><input type='text' name='number' id='1-3' /></td><td><input type='text' name='number' id='1-4' /></td><td><input type='text' name='number' id='1-5' /></td><td class='solve_left'><input type='text' name='number' id='1-6' /></td><td><input type='text' name='number' id='1-7' /></td><td><input type='text' name='number' id='1-8' /></td></tr><tr><td><input type='text' name='number' id='2-0' /></td><td><input type='text' name='number' id='2-1' /></td><td><input type='text' name='number' id='2-2' /></td><td class='solve_left'><input type='text' name='number' id='2-3' /></td><td><input type='text' name='number' id='2-4' /></td><td><input type='text' name='number' id='2-5' /></td><td class='solve_left'><input type='text' name='number' id='2-6' /></td><td><input type='text' name='number' id='2-7' /></td><td><input type='text' name='number' id='2-8' /></td></tr><tr><td class='solve_top'><input type='text' name='number' id='3-0' /></td><td class='solve_top'><input type='text' name='number' id='3-1' /></td><td class='solve_top'><input type='text' name='number' id='3-2' /></td><td class='solve_left solve_top'><input type='text' name='number' id='3-3' /></td><td class='solve_top'><input type='text' name='number' id='3-4' /></td><td class='solve_top'><input type='text' name='number' id='3-5' /></td><td class='solve_left solve_top'><input type='text' name='number' id='3-6' /></td><td class='solve_top'><input type='text' name='number' id='3-7' /></td><td class='solve_top'><input type='text' name='number' id='3-8' /></td></tr><tr><td><input type='text' name='number' id='4-0' /></td><td><input type='text' name='number' id='4-1' /></td><td><input type='text' name='number' id='4-2' /></td><td class='solve_left'><input type='text' name='number' id='4-3' /></td><td><input type='text' name='number' id='4-4' /></td><td><input type='text' name='number' id='4-5' /></td><td class='solve_left'><input type='text' name='number' id='4-6' /></td><td><input type='text' name='number' id='4-7' /></td><td><input type='text' name='number' id='4-8' /></td></tr><tr><td><input type='text' name='number' id='5-0' /></td><td><input type='text' name='number' id='5-1' /></td><td><input type='text' name='number' id='5-2' /></td><td class='solve_left'><input type='text' name='number' id='5-3' /></td><td><input type='text' name='number' id='5-4' /></td><td><input type='text' name='number' id='5-5' /></td><td class='solve_left'><input type='text' name='number' id='5-6' /></td><td><input type='text' name='number' id='5-7' /></td><td><input type='text' name='number' id='5-8' /></td></tr><tr><td class='solve_top'><input type='text' name='number' id='6-0' /></td><td class='solve_top'><input type='text' name='number' id='6-1' /></td><td class='solve_top'><input type='text' name='number' id='6-2' /></td><td class='solve_left solve_top'><input type='text' name='number' id='6-3' /></td><td class='solve_top'><input type='text' name='number' id='6-4' /></td><td class='solve_top'><input type='text' name='number' id='6-5' /></td><td class='solve_left solve_top'><input type='text' name='number' id='6-6' /></td><td class='solve_top'><input type='text' name='number' id='6-7' /></td><td class='solve_top'><input type='text' name='number' id='6-8' /></td></tr><tr><td><input type='text' name='number' id='7-0' /></td><td><input type='text' name='number' id='7-1' /></td><td><input type='text' name='number' id='7-2' /></td><td class='solve_left'><input type='text' name='number' id='7-3' /></td><td><input type='text' name='number' id='7-4' /></td><td><input type='text' name='number' id='7-5' /></td><td class='solve_left'><input type='text' name='number' id='7-6' /></td><td><input type='text' name='number' id='7-7' /></td><td><input type='text' name='number' id='7-8' /></td></tr><tr><td><input type='text' name='number' id='8-0' /></td><td><input type='text' name='number' id='8-1' /></td><td><input type='text' name='number' id='8-2' /></td><td class='solve_left'><input type='text' name='number' id='8-3' /></td><td><input type='text' name='number' id='8-4' /></td><td><input type='text' name='number' id='8-5' /></td><td class='solve_left'><input type='text' name='number' id='8-6' /></td><td><input type='text' name='number' id='8-7' /></td><td><input type='text' name='number' id='8-8' /></td></tr></table>
-    </div>
-  </div>
-		
-<!--- Buttons for actions -->
-		
-		<div class="grid_100 buttons">
-      <input id="test-sudoku" type="button" name="Test" value="Test">
-			<input id="fill-solver-matrix" type="button" name="Fill" value="Fill">
-			<input id="h-button" class="solving" type="button" name="H" value="H">
-			<input id="fake-h-button" class="faker" type="button" name="Fake H" value="Fake H">
-			<input id="v-button" class="solving" type="button" name="V" value="V">
-			<input id="fake-v-button" class="faker" type="button" name="Fake V" value="Fake V">
-			<input id="d-button" class="solving" type="button" name="I" value="I">
-			<input id="fake-d-button" class="faker" type="button" name="Fake D" value="Fake D">
-			<input id="q-button" class="solving" type="button" name="Q" value="Q">
-			<input id="fake-q-button" class="faker" type="button" name="Fake Q" value="Fake Q">
-			<input id="solve" type="button" name="Solve" value="Solve">
-		</div>
-
 <!--- Display all the matrixs of the cube -->
 
 		<div class="sudoku_solving">

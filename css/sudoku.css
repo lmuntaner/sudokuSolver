@@ -48,6 +48,7 @@ div.sudoku-buttons {
 div.sudoku-buttons h3 {
   float: left;
   width: 20%;
+  margin-left: 20px;
   color: #333;
   text-shadow: none;
 }
@@ -71,9 +72,8 @@ div.number-buttons {
 }
 
 div.number-buttons h3 {
-  margin-top: 50px;
+  margin-top: 40px;
 }
-
 
 /* General buttons */
 
