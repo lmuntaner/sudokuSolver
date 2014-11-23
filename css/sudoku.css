@@ -1,0 +1,93 @@
+/* Main sudoku container */
+
+div.sudoku-container {
+  background-color: #eee;
+  height: 450px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* Sudoku table */
+
+div.sudoku-table {
+  float: left;
+  width: 40%;
+  margin: 20px;
+}
+
+.sudoku-table input {
+	width: 30px;
+	height: 30px;
+	border: 2px solid #eee;
+	background-color: #fff;
+	text-align: center;
+	font-size: 0.9em;
+}
+
+.sudoku-table .collateral {
+  background-color: lightyellow;
+}
+
+.sudoku-table .to-set {
+	background-color: yellow;
+}
+
+.test-button input {
+  margin-top: 30px;
+  width: 80px;
+}
+
+/* Buttons sudoku solver */
+
+div.sudoku-buttons {
+  float: left;
+  width: 45%;
+  margin: 20px;
+}
+
+div.sudoku-buttons h3 {
+  float: left;
+  width: 20%;
+  color: #333;
+  text-shadow: none;
+}
+
+div.sudoku-buttons table {
+  margin: 3px auto;
+}
+
+div.sudoku-buttons input {
+  margin: 1px;
+}
+
+/* Number buttons */
+
+div.number-buttons {
+  padding-top: 20px;
+  height: 150px;
+  background-color: #ddd;
+  margin: 10px auto;
+  width: 80%;
+}
+
+div.number-buttons h3 {
+  margin-top: 50px;
+}
+
+
+/* General buttons */
+
+div.general-buttons {
+  padding-top: 15px;
+  height: 100px;
+  background-color: #ddd;
+  margin: 10px auto;
+  width: 80%;
+}
+
+
+
+
+
+
+
