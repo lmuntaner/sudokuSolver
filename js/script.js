@@ -10,7 +10,8 @@
     this.loadMatrix();
     this.$el.find("#test-sudoku").on("click", this.testSudoku.bind(this));
     this.$el.find("#fill-solver-matrix").on("click", this.fill.bind(this));
-    this.$el.find("#1-button").on("click", this.numberOne.bind(this));
+    this.$el.find("div.number-buttons").on("click", "input", this.solveNumber.bind(this));
+    // this.$el.find("#1-button").on("click", this.solveNumber.bind(this));
     this.$el.find("#h-button").on("click", this.horizontals.bind(this));
     // this.$el.find("#fake-h-button").on("click", this.fakeH.bind(this));
     this.$el.find("#v-button").on("click", this.verticals.bind(this));
@@ -71,9 +72,14 @@
     this.sumQ(false);
   };
   
-  SGame.prototype.numberOne = function (event) {
+  SGame.prototype.solveNumber = function (event) {
     this.fillSolverMatrix();
-    this.sumHNumber(0, 0, true);
+    var num = parseInt(event.currentTarget.value) - 1;
+    this.sumVNumber(num, true);
+    this.sumHNumber(num, true);
+    // this.sumDNumber(num, true);
+    this.sumQNumber(num, true);
+    this.write();
   };
   
   // Creates empty matrix for sudoku and 3d Solver Matrix
@@ -240,15 +246,16 @@
   	}
   };
   
-  SGame.prototype.sumHNumber = function (i, k, solve) {
-		var suma = 0;
-		for (var j = 0; j < 9; j++){
-			suma += this.solverMatrix[i][j][k];
-			if(j == 8 && suma == -1){
-        console.log("this is i: " + i + " and this is k:" + k);
-        this.searchSetH(i, k, solve);
-			}
-		}
+  SGame.prototype.sumHNumber = function (k, solve) {
+    for (var i = 0; i < 9; i++){
+  		var suma = 0;
+  		for (var j = 0; j < 9; j++){
+  			suma += this.solverMatrix[i][j][k];
+  			if(j == 8 && suma == -1){
+          this.searchSetH(i, k, solve);
+  			}
+  		}
+    }
   };
 
   // Looks for the -1 in the verticals, sets it to 1 and then runs
@@ -283,6 +290,18 @@
   		}
   	}
   };
+  
+  SGame.prototype.sumVNumber = function(k, solve) {
+  	for (var j = 0; j < 9; j++){
+			var suma = 0;
+			for (var i = 0; i < 9; i++){
+				suma += this.solverMatrix[i][j][k];
+				if(i == 8 && suma == -1){
+					this.searchSetV(j, k, solve);
+				}
+			}
+  	}
+  };
 
   // Looks for the -1 in the deep lines, sets it to 1 and then runs
   // the helper functions to set the correspondent 0s
@@ -304,6 +323,20 @@
   // Looks for deep lines with sum = -1
   // When finds them, calls searchSetD
   SGame.prototype.sumD = function (solve) {
+  	for (var i = 0; i < 9; i++){
+  		for ( var j = 0; j < 9; j++){
+  			var suma = 0;
+  			for (var k = 0; k < 9; k++){
+  				suma += this.solverMatrix[i][j][k];
+  				if(k == 8 && suma == -1){
+  					this.searchSetD(i, j, solve);
+  				}
+  			}
+  		}
+  	}
+  };
+  
+  SGame.prototype.sumDNumber = function (k, solve) {
   	for (var i = 0; i < 9; i++){
   		for ( var j = 0; j < 9; j++){
   			var suma = 0;
@@ -354,6 +387,22 @@
   			}
   		}
   	}
+  };
+  
+  SGame.prototype.sumQNumber = function (k, solve) {
+		for (var l = 0; l < 9; l += 3){
+			for (var h = 0; h < 9; h += 3){
+				var suma = 0;
+				for ( var i = l; i < l + 3; i++){
+					for (var j = h; j < h + 3; j++){
+						suma += this.solverMatrix[i][j][k];
+						if(i == l + 2 && j == h + 2 && suma == -1){
+							this.searchSetQ(l, h, k, solve);
+						}
+					}
+				}	
+			}
+		}
   };
 
   // Sums the cells value in the solverMatrix
