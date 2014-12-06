@@ -39,7 +39,7 @@
 
       <div class="masthead clearfix">
         <div class="inner">
-          <h3 class="masthead-brand">Cover</h3>
+          <h3 class="masthead-brand">Sudoku Sokver</h3>
           <nav>
             <ul class="nav masthead-nav">
               <li class="active"><a href="#">Home</a></li>
@@ -48,6 +48,10 @@
             </ul>
           </nav>
         </div>
+      </div>
+      
+      <div>
+        <h1>Solve a sudoku step by step</h1>
       </div>
       
       <div class="sudoku-container">
@@ -63,19 +67,19 @@
             <h3>Check number</h3>
             <table>
               <tr>
-                <td><input class="btn btn-warning" type="button" value="1"></td>
-                <td><input class="btn btn-warning" type="button" value="2"></td>
-                <td><input class="btn btn-warning" type="button" value="3"></td>
+                <td><input id="1-button" class="btn btn-warning" type="button" value="1"></td>
+                <td><input id="2-button" class="btn btn-warning" type="button" value="2"></td>
+                <td><input id="3-button" class="btn btn-warning" type="button" value="3"></td>
               </tr>
               <tr>
-                <td><input class="btn btn-warning" type="button" value="4"></td>
-                <td><input class="btn btn-warning" type="button" value="5"></td>
-                <td><input class="btn btn-warning" type="button" value="6"></td>
+                <td><input id="4-button" class="btn btn-warning" type="button" value="4"></td>
+                <td><input id="5-button" class="btn btn-warning" type="button" value="5"></td>
+                <td><input id="6-button" class="btn btn-warning" type="button" value="6"></td>
               </tr>
               <tr>
-                <td><input class="btn btn-warning" type="button" value="7"></td>
-                <td><input class="btn btn-warning" type="button" value="8"></td>
-                <td><input class="btn btn-warning" type="button" value="9"></td>
+                <td><input id="7-button" class="btn btn-warning" type="button" value="7"></td>
+                <td><input id="8-button" class="btn btn-warning" type="button" value="8"></td>
+                <td><input id="9-button" class="btn btn-warning" type="button" value="9"></td>
               </tr>
             </table>
           </div>
@@ -83,29 +87,16 @@
             <h3>Check by step</h3>
             <table>
               <tr>
-                <td><input id="fake-h-button" class="faker btn btn-warning" type="button" name="Fake H" value="H"></td>
-                <td><input id="fake-v-button" class="faker btn btn-warning" type="button" name="Fake V" value="V"></td>
+                <td><input id="h-button" class="faker btn btn-warning" type="button" name="Fake H" value="H"></td>
+                <td><input id="v-button" class="faker btn btn-warning" type="button" name="Fake V" value="V"></td>
               </tr>
               <tr>
-                <td><input id="fake-d-button" class="faker btn btn-warning" type="button" name="Fake D" value="D"></td>
-                <td><input id="fake-q-button" class="faker btn btn-warning" type="button" name="Fake Q" value="Q"></td>
+                <td><input id="d-button" class="faker btn btn-warning" type="button" name="Fake D" value="D"></td>
+                <td><input id="q-button" class="faker btn btn-warning" type="button" name="Fake Q" value="Q"></td>
               </tr>
             </table>
           </div>
-          <div class="solving-buttons">
-            <h3>Solve by step</h3>
-            <table>
-              <tr>
-                <td><input id="h-button" class="solving btn btn-danger" type="button" name="H" value="H"></td>
-                <td><input id="v-button" class="solving btn btn-danger" type="button" name="V" value="V"></td>
-              </tr>
-              <tr>
-                <td><input id="d-button" class="solving btn btn-danger" type="button" name="I" value="I"></td>
-                <td><input id="q-button" class="solving btn btn-danger" type="button" name="Q" value="Q"></td>
-              </tr>
-            </table>
-            <input id="solve" class="btn btn-danger" type="button" name="Solve" value="Solve">
-          </div>
+          <input id="solve" class="btn btn-danger" type="button" name="Solve" value="Solve">
         </div>
       </div>
 
@@ -130,7 +121,7 @@
 	</div>
     
     <script>
-    var $el = $('.container');
+    var $el = $('.cover-container');
     var game = new Sudoku.SGame($el);
     </script>
 </body>

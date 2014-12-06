@@ -21,6 +21,7 @@ div.sudoku-table {
 	border: 2px solid #eee;
 	background-color: #fff;
 	text-align: center;
+  color: #333;
 	font-size: 0.9em;
 }
 
@@ -35,6 +36,7 @@ div.sudoku-table {
 .test-button input {
   margin-top: 30px;
   width: 80px;
+  color: #fff;
 }
 
 /* Buttons sudoku solver */
@@ -67,7 +69,7 @@ div.number-buttons {
   padding-top: 20px;
   height: 150px;
   background-color: #ddd;
-  margin: 10px auto;
+  margin: 0px auto 20px;
   width: 80%;
 }
 
@@ -78,7 +80,7 @@ div.number-buttons h3 {
 /* General buttons */
 
 div.general-buttons {
-  padding-top: 15px;
+  padding-top: 12px;
   height: 100px;
   background-color: #ddd;
   margin: 10px auto;

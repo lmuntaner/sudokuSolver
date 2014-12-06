@@ -10,65 +10,71 @@
     this.loadMatrix();
     this.$el.find("#test-sudoku").on("click", this.testSudoku.bind(this));
     this.$el.find("#fill-solver-matrix").on("click", this.fill.bind(this));
+    this.$el.find("#1-button").on("click", this.numberOne.bind(this));
     this.$el.find("#h-button").on("click", this.horizontals.bind(this));
-    this.$el.find("#fake-h-button").on("click", this.fakeH.bind(this));
+    // this.$el.find("#fake-h-button").on("click", this.fakeH.bind(this));
     this.$el.find("#v-button").on("click", this.verticals.bind(this));
-    this.$el.find("#fake-v-button").on("click", this.fakeV.bind(this));
+    // this.$el.find("#fake-v-button").on("click", this.fakeV.bind(this));
     this.$el.find("#d-button").on("click", this.deepLines.bind(this));
-    this.$el.find("#fake-d-button").on("click", this.fakeD.bind(this));
+    // this.$el.find("#fake-d-button").on("click", this.fakeD.bind(this));
     this.$el.find("#q-button").on("click", this.squares.bind(this));
-    this.$el.find("#fake-q-button").on("click", this.fakeQ.bind(this));
+    // this.$el.find("#fake-q-button").on("click", this.fakeQ.bind(this));
     this.$el.find("#solve").on("click", this.solve.bind(this));
   };
   
   SGame.prototype.fill = function () {
     this.fillSolverMatrix();
     this.write();
-  }
+  };
   
   SGame.prototype.horizontals = function () {
     this.fillSolverMatrix();
     this.sumH(true);
     this.write();
-  }
+  };
 
   SGame.prototype.fakeH = function () {
     this.fillSolverMatrix();
     this.sumH(false);
-  }
+  };
   
   SGame.prototype.verticals = function () {
     this.fillSolverMatrix();
     this.sumV(true);
     this.write();
-  }
+  };
 
   SGame.prototype.fakeV = function () {
     this.fillSolverMatrix();
     this.sumV(false);
-  }
+  };
   
   SGame.prototype.deepLines = function () {
     this.fillSolverMatrix();
     this.sumD(true);
     this.write();
-  }
+  };
 
   SGame.prototype.fakeD = function () {
     this.fillSolverMatrix();
     this.sumD(false);
-  }
+  };
   
   SGame.prototype.squares = function () {
     this.fillSolverMatrix();
     this.sumQ(true);
     this.write();
-  }
+  };
 
   SGame.prototype.fakeQ = function () {
     this.fillSolverMatrix();
     this.sumQ(false);
-  }
+  };
+  
+  SGame.prototype.numberOne = function (event) {
+    this.fillSolverMatrix();
+    this.sumHNumber(0, 0, true);
+  };
   
   // Creates empty matrix for sudoku and 3d Solver Matrix
   SGame.prototype.loadMatrix = function (){
@@ -83,7 +89,7 @@
   			};
   		};
   	};
-  }
+  };
 
   SGame.prototype.testSudoku = function () {
     var test = [['','','','','','', 1,'', 4],
@@ -98,10 +104,10 @@
   	for (var i = 0; i < 9; i++) {
   		for (var j = 0; j < 9; j++) {
         var id = i + "-" + j;
-      	document.getElementById(id).value = test[i][j];
+        $('#' + id).val(test[i][j]);
   		};
   	};
-  }
+  };
   
   // Fills the tables below the buttons on the html
   SGame.prototype.writeSolverMatrix = function(){
@@ -122,8 +128,7 @@
         document.getElementById("sum-k"+k+"-j"+j).value = verticalSum;
       }
     }
-
-  }
+  };
 
   // Returns the number in that input cell
   SGame.prototype.getNumber = function (id) {
@@ -131,7 +136,7 @@
     var j = id[2];
     this.sudokuMatrix[i][j] = document.getElementById(id).value;
     parseInt(this.sudokuMatrix[i][j]);
-  }
+  };
 
   // Helper function. Fills the horizontals of solverMatrix with 0
   SGame.prototype.cerosH = function (i, k){
@@ -140,7 +145,7 @@
         this.solverMatrix[i][l][k] = 0;
       }
     }
-  }
+  };
 
   // Helper function. Fills the verticals of solverMatrix with 0
   SGame.prototype.cerosV = function (j, k){
@@ -149,7 +154,7 @@
         this.solverMatrix[l][j][k] = 0;
       }
     }
-  }
+  };
 
   // Helper function. Fills the deep lines of solverMatrix with 0
   SGame.prototype.cerosD = function(i, j){
@@ -158,7 +163,7 @@
         this.solverMatrix[i][j][l] = 0;
       }
     }
-  }
+  };
 
   // Helper function. Fills the square of solverMatrix with 0
   SGame.prototype.cerosQ = function (i, j, k){
@@ -171,7 +176,7 @@
         }
       }
     }
-  }
+  };
   
   //----Omplir les capes amb 0s 1s i -1s------
   SGame.prototype.fillSolverMatrix = function (){					
@@ -190,7 +195,7 @@
   			}
   		}
   	}
-  }
+  };
 
   // Helper function that takes a row col and value and sets class
   function setClass (i, j, value) {
@@ -200,7 +205,7 @@
     } else {
       $(id).addClass("collateral");
     }
-  }
+  };
   
   // Looks for the -1 in the horizontals, sets it to 1 and then runs
   // the previous helper functions to set the correspondent 0s
@@ -217,23 +222,34 @@
         }
       }
   	}
-  }
+  };
 
   // Looks for horizontal lines with sum = -1
   // When finds them, calls searchSetH
   SGame.prototype.sumH = function (solve){
   	for (var i = 0; i < 9; i++){
   		for ( var k = 0; k < 9; k++){
-  			var suma = 0;
-  			for (var j = 0; j < 9; j++){
-  				suma += this.solverMatrix[i][j][k];
-  				if(j == 8 && suma == -1){
+    		var suma = 0;
+    		for (var j = 0; j < 9; j++){
+    			suma += this.solverMatrix[i][j][k];
+    			if(j == 8 && suma == -1){
             this.searchSetH(i, k, solve);
-  				}
-  			}
+    			}
+    		}
   		}
   	}
-  }
+  };
+  
+  SGame.prototype.sumHNumber = function (i, k, solve) {
+		var suma = 0;
+		for (var j = 0; j < 9; j++){
+			suma += this.solverMatrix[i][j][k];
+			if(j == 8 && suma == -1){
+        console.log("this is i: " + i + " and this is k:" + k);
+        this.searchSetH(i, k, solve);
+			}
+		}
+  };
 
   // Looks for the -1 in the verticals, sets it to 1 and then runs
   // the helper functions to set the correspondent 0s
@@ -250,7 +266,7 @@
         }
       }
   	}
-  }
+  };
 
   // Looks for vertical lines with sum = -1
   // When finds them, calls searchSetV
@@ -266,7 +282,7 @@
   			}
   		}
   	}
-  }
+  };
 
   // Looks for the -1 in the deep lines, sets it to 1 and then runs
   // the helper functions to set the correspondent 0s
@@ -283,7 +299,7 @@
     		}
       }
   	}
-  }
+  };
 
   // Looks for deep lines with sum = -1
   // When finds them, calls searchSetD
@@ -299,7 +315,7 @@
   			}
   		}
   	}
-  }
+  };
 
   // Looks for the -1 in the squares, sets it to 1 and then runs
   // the helper functions to set the correspondent 0s
@@ -318,7 +334,7 @@
   			}
   		}
   	}
-  }
+  };
 
   // Looks for cells in the square with sum = -1
   // When finds them, calls searchSetQ
@@ -338,7 +354,7 @@
   			}
   		}
   	}
-  }
+  };
 
   // Sums the cells value in the solverMatrix
   SGame.prototype.contador = function (){
@@ -351,7 +367,7 @@
   		};
   	};
   	return suma;
-  }
+  };
 
   // Solves the sudoku by checking if there are any horizontals, vertical,
   // deep line or square cell that sum -1. Keeps track a track of the count
@@ -386,13 +402,11 @@
 	 
   	 if(count == 81){
   		 this.write();
-       // write_prova();
   	 }else{
   		 alert("No s'ha pogut resoldre...");
   		 this.write();
-       // write_prova();
   	 }
-  }
+  };
 
   // Writes the sudokuMatrix in the sudoku table in the html
   SGame.prototype.write = function (){
@@ -407,6 +421,6 @@
   		document.getElementById(i+"-"+j).value = this.sudokuMatrix[i][j];
   		};
   	};
-  }
+  };
   
 })();
