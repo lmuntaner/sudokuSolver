@@ -87,6 +87,18 @@ div.general-buttons {
   width: 80%;
 }
 
+.container-solve-button {
+  background-color: #ddd;
+  padding-top: 12px;
+  margin: 1px auto;
+  height: 80px;
+  width: 80%;
+}
+
+div.container-solve-button .solve-button {
+  margin-top: 12px;
+}
+
 
 
 
