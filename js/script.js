@@ -459,7 +459,7 @@
 
   // Writes the sudokuMatrix in the sudoku table in the html
   SGame.prototype.write = function (){
-    this.writeSolverMatrix();
+    // this.writeSolverMatrix();
   	for (var i = 0; i < 9; i++) {
   		for (var j = 0; j < 9; j++) {
   			for (var k = 0; k < 9; k++) {
