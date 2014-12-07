@@ -6,4 +6,4 @@ I have used some buttons to recreate the steps that the script uses.
 
 Check it out in the [link](http://solving-sudoku-by-steps.herokuapp.com)
 
-![Sudoku Solver](https://github.com/lmuntaner/sudokuSolver/tree/master/img/screenshot.png)
+![Sudoku Solver](https://raw.githubusercontent.com/lmuntaner/sudokuSolver/master/img/screenshot.png)
