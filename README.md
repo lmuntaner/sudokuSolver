@@ -1,7 +1,7 @@
 #Sudoku Solver
 
-The solving algorthm is not about trying all the possibilities. It goes step by step simulating the tools or mind uses to solve them.
+The solving algorithm is not about recursively trying all the possibilities. It goes step by step simulating the tools our mind uses to solve them.
 
-Unfortunately I haven't been able to reproduce all of the tools so far. Which means that there are some top level sudokus that the app can't solve.
+I have used some buttons to recreate the steps that the script uses.
 
 Check it out in the [link](http://solving-sudoku-by-steps.herokuapp.com)
