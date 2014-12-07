@@ -5,3 +5,5 @@ The solving algorithm is not about recursively trying all the possibilities. It 
 I have used some buttons to recreate the steps that the script uses.
 
 Check it out in the [link](http://solving-sudoku-by-steps.herokuapp.com)
+
+![Sudoku Solver](https://raw.github.com/username/projectname/branch/path/to/img.png)
