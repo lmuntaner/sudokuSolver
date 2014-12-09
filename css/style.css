@@ -89,6 +89,10 @@
 	margin-left: 30px;
 }
 
+.tooltip > .tooltip-inner {
+	background-color: #333;
+}
+
 /*----Content solving----*/
 
 .sudoku_solving h2 {

@@ -67,7 +67,12 @@
       	<div class="sudoku-table">
       		<table><tr><td><input type='text' name='number' id='0-0' /></td><td><input type='text' name='number' id='0-1' /></td><td><input type='text' name='number' id='0-2' /></td><td class='solve_left'><input type='text' name='number' id='0-3' /></td><td><input type='text' name='number' id='0-4' /></td><td><input type='text' name='number' id='0-5' /></td><td class='solve_left'><input type='text' name='number' id='0-6' /></td><td><input type='text' name='number' id='0-7' /></td><td><input type='text' name='number' id='0-8' /></td></tr><tr><td><input type='text' name='number' id='1-0' /></td><td><input type='text' name='number' id='1-1' /></td><td><input type='text' name='number' id='1-2' /></td><td class='solve_left'><input type='text' name='number' id='1-3' /></td><td><input type='text' name='number' id='1-4' /></td><td><input type='text' name='number' id='1-5' /></td><td class='solve_left'><input type='text' name='number' id='1-6' /></td><td><input type='text' name='number' id='1-7' /></td><td><input type='text' name='number' id='1-8' /></td></tr><tr><td><input type='text' name='number' id='2-0' /></td><td><input type='text' name='number' id='2-1' /></td><td><input type='text' name='number' id='2-2' /></td><td class='solve_left'><input type='text' name='number' id='2-3' /></td><td><input type='text' name='number' id='2-4' /></td><td><input type='text' name='number' id='2-5' /></td><td class='solve_left'><input type='text' name='number' id='2-6' /></td><td><input type='text' name='number' id='2-7' /></td><td><input type='text' name='number' id='2-8' /></td></tr><tr><td class='solve_top'><input type='text' name='number' id='3-0' /></td><td class='solve_top'><input type='text' name='number' id='3-1' /></td><td class='solve_top'><input type='text' name='number' id='3-2' /></td><td class='solve_left solve_top'><input type='text' name='number' id='3-3' /></td><td class='solve_top'><input type='text' name='number' id='3-4' /></td><td class='solve_top'><input type='text' name='number' id='3-5' /></td><td class='solve_left solve_top'><input type='text' name='number' id='3-6' /></td><td class='solve_top'><input type='text' name='number' id='3-7' /></td><td class='solve_top'><input type='text' name='number' id='3-8' /></td></tr><tr><td><input type='text' name='number' id='4-0' /></td><td><input type='text' name='number' id='4-1' /></td><td><input type='text' name='number' id='4-2' /></td><td class='solve_left'><input type='text' name='number' id='4-3' /></td><td><input type='text' name='number' id='4-4' /></td><td><input type='text' name='number' id='4-5' /></td><td class='solve_left'><input type='text' name='number' id='4-6' /></td><td><input type='text' name='number' id='4-7' /></td><td><input type='text' name='number' id='4-8' /></td></tr><tr><td><input type='text' name='number' id='5-0' /></td><td><input type='text' name='number' id='5-1' /></td><td><input type='text' name='number' id='5-2' /></td><td class='solve_left'><input type='text' name='number' id='5-3' /></td><td><input type='text' name='number' id='5-4' /></td><td><input type='text' name='number' id='5-5' /></td><td class='solve_left'><input type='text' name='number' id='5-6' /></td><td><input type='text' name='number' id='5-7' /></td><td><input type='text' name='number' id='5-8' /></td></tr><tr><td class='solve_top'><input type='text' name='number' id='6-0' /></td><td class='solve_top'><input type='text' name='number' id='6-1' /></td><td class='solve_top'><input type='text' name='number' id='6-2' /></td><td class='solve_left solve_top'><input type='text' name='number' id='6-3' /></td><td class='solve_top'><input type='text' name='number' id='6-4' /></td><td class='solve_top'><input type='text' name='number' id='6-5' /></td><td class='solve_left solve_top'><input type='text' name='number' id='6-6' /></td><td class='solve_top'><input type='text' name='number' id='6-7' /></td><td class='solve_top'><input type='text' name='number' id='6-8' /></td></tr><tr><td><input type='text' name='number' id='7-0' /></td><td><input type='text' name='number' id='7-1' /></td><td><input type='text' name='number' id='7-2' /></td><td class='solve_left'><input type='text' name='number' id='7-3' /></td><td><input type='text' name='number' id='7-4' /></td><td><input type='text' name='number' id='7-5' /></td><td class='solve_left'><input type='text' name='number' id='7-6' /></td><td><input type='text' name='number' id='7-7' /></td><td><input type='text' name='number' id='7-8' /></td></tr><tr><td><input type='text' name='number' id='8-0' /></td><td><input type='text' name='number' id='8-1' /></td><td><input type='text' name='number' id='8-2' /></td><td class='solve_left'><input type='text' name='number' id='8-3' /></td><td><input type='text' name='number' id='8-4' /></td><td><input type='text' name='number' id='8-5' /></td><td class='solve_left'><input type='text' name='number' id='8-6' /></td><td><input type='text' name='number' id='8-7' /></td><td><input type='text' name='number' id='8-8' /></td></tr></table>
           <div class="test-button">
-            <input id="test-sudoku" class="btn btn-primary" type="button" name="Test" value="Fill">
+            <input id="test-sudoku"
+									 class="btn btn-primary"
+									 type="button"
+									 name="Test"
+									 value="Fill"
+									 data-toggle="tooltip" data-placement="bottom" title="Fill with an example">
           </div>
         </div>
         
@@ -76,19 +81,54 @@
             <h3>Check number</h3>
             <table>
               <tr>
-                <td><input id="1-button" class="btn btn-warning" type="button" value="1"></td>
-                <td><input id="2-button" class="btn btn-warning" type="button" value="2"></td>
-                <td><input id="3-button" class="btn btn-warning" type="button" value="3"></td>
+                <td>
+									<input id="1-button" class="btn btn-warning" type="button" value="1"
+												 data-toggle="tooltip" data-placement="top" title="1's next step">
+								</td>
+                <td>
+									<input id="2-button" class="btn btn-warning" type="button" value="2"
+												 data-toggle="tooltip" data-placement="top"
+												 title="2's next step">
+								</td>
+                <td>
+									<input id="3-button" class="btn btn-warning" type="button" value="3"
+												 data-toggle="tooltip" data-placement="top"
+												 title="3's next step">
+								</td>
               </tr>
               <tr>
-                <td><input id="4-button" class="btn btn-warning" type="button" value="4"></td>
-                <td><input id="5-button" class="btn btn-warning" type="button" value="5"></td>
-                <td><input id="6-button" class="btn btn-warning" type="button" value="6"></td>
+                <td>
+									<input id="4-button" class="btn btn-warning" type="button" value="4"
+												 data-toggle="tooltip" data-placement="top"
+												 title="4's next step">
+								</td>
+                <td>
+									<input id="5-button" class="btn btn-warning" type="button" value="5"
+												 data-toggle="tooltip" data-placement="top"
+												 title="5's next step">
+								</td>
+                <td>
+									<input id="6-button" class="btn btn-warning" type="button" value="6"
+												 data-toggle="tooltip" data-placement="top"
+												 title="6's next step">
+								</td>
               </tr>
               <tr>
-                <td><input id="7-button" class="btn btn-warning" type="button" value="7"></td>
-                <td><input id="8-button" class="btn btn-warning" type="button" value="8"></td>
-                <td><input id="9-button" class="btn btn-warning" type="button" value="9"></td>
+                <td>
+									<input id="7-button" class="btn btn-warning" type="button" value="7"
+												 data-toggle="tooltip" data-placement="top"
+												 title="7's next step">
+								</td>
+                <td>
+									<input id="8-button" class="btn btn-warning" type="button" value="8"
+												 data-toggle="tooltip" data-placement="top"
+												 title="8's next step">
+								</td>
+                <td>
+									<input id="9-button" class="btn btn-warning" type="button" value="9"
+												 data-toggle="tooltip" data-placement="top"
+												 title="9's next step">
+								</td>
               </tr>
             </table>
           </div>
@@ -96,18 +136,41 @@
             <h3>Check by step</h3>
             <table>
               <tr>
-                <td><input id="h-button" class="faker btn btn-warning" type="button" name="Fake H" value="H"></td>
-                <td><input id="v-button" class="faker btn btn-warning" type="button" name="Fake V" value="V"></td>
+                <td>
+									<input id="h-button" class="faker btn btn-warning" type="button"
+												 name="Fake H" value="H"
+												 data-toggle="tooltip" data-placement="top"
+												 title="Check all the horizontal's possible numbers in this step">
+								</td>
+                <td>
+									<input id="v-button" class="faker btn btn-warning" type="button"
+												 name="Fake V" value="V"
+												 data-toggle="tooltip" data-placement="top"
+												 title="Check all the vertical's possible numbers in this step">
+								</td>
               </tr>
               <tr>
-                <td><input id="d-button" class="faker btn btn-warning" type="button" name="Fake D" value="D"></td>
-                <td><input id="q-button" class="faker btn btn-warning" type="button" name="Fake Q" value="Q"></td>
+                <td>
+									<input id="d-button" class="faker btn btn-warning" type="button"
+												 name="Fake D" value="D"
+												 data-toggle="tooltip" data-placement="top"
+												 title="Check all the square's possible numbers in this step">
+									</td>
+                <td>
+									<input id="q-button" class="faker btn btn-warning" type="button"
+												 name="Fake Q" value="Q"
+												 data-toggle="tooltip" data-placement="top"
+												 title="Check each cell possible numbers in this step">
+								</td>
               </tr>
             </table>
           </div>
           <div class="container-solve-button">
             <h3>Solve sudoku</h3>
-            <input id="solve" class="btn btn-danger solve-button" type="button" name="Solve" value="Solve">            
+            <input id="solve" class="btn btn-danger solve-button" type="button"
+									 name="Solve" value="Solve"
+									 data-toggle="tooltip" data-placement="bottom"
+									 title="Solve the Sudoku!">            
           </div>
         </div>
       </div>
@@ -137,6 +200,11 @@
     <script>
     var $el = $('.cover-container');
     var game = new Sudoku.SGame($el);
+		
+		$(function () {
+		  $('[data-toggle="tooltip"]').tooltip()
+		});
+		
     </script>
 </body>
 
