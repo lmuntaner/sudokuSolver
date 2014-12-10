@@ -104,6 +104,7 @@
 	width: 20px;
 	text-align: center;
 	font-size: 0.8em;
+	color: #333;
 }
 
 .sudoku_solving table {
@@ -116,12 +117,14 @@
 	text-align: center;
 }
 
-.sum {
+input.sum {
 	border: none;
+	background-color: #333;
+	color: #fff;
 }
 
-.sum--1 {
-	color: red;
+input.sum--1 {
+	color: yellow;
 }
 
 

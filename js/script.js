@@ -125,6 +125,11 @@
           horizontalSum += this.solverMatrix[i][j][k];
         }
         document.getElementById("sum-k"+k+"-i"+i).value = horizontalSum;
+				if (horizontalSum === -1) {
+					$('#sum-k' + k + "-i" + i).addClass("sum--1");
+				} else {
+					$('#sum-k' + k + "-i" + i).removeClass("sum--1");
+				}
       }
       for (var j = 0; j < 9; j++){
         var verticalSum = 0;
@@ -132,6 +137,11 @@
           verticalSum += this.solverMatrix[i][j][k];
         }
         document.getElementById("sum-k"+k+"-j"+j).value = verticalSum;
+				if (verticalSum === -1) {
+					$('#sum-k' + k + "-j" + j).addClass("sum--1");
+				} else {
+					$('#sum-k' + k + "-j" + j).removeClass("sum--1");
+				}
       }
     }
   };
@@ -456,10 +466,12 @@
   		 this.write();
   	 }
   };
+	
+	// Adds class to the sums that match -1
 
   // Writes the sudokuMatrix in the sudoku table in the html
   SGame.prototype.write = function (){
-    // this.writeSolverMatrix();
+    this.writeSolverMatrix();
   	for (var i = 0; i < 9; i++) {
   		for (var j = 0; j < 9; j++) {
   			for (var k = 0; k < 9; k++) {
