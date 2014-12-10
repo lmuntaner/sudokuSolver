@@ -95,6 +95,10 @@
 
 /*----Content solving----*/
 
+.sudoku_solving {
+	display: none;
+}
+
 .sudoku_solving h2 {
 	text-align: center;
 	margin: 30px 0;
@@ -109,7 +113,7 @@
 
 .sudoku_solving table {
 	margin-top: 20px;
-	margin-left: 40px;
+	margin-left: 50px;
 	margin-bottom: 20px;
 }
 
