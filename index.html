@@ -197,7 +197,8 @@
       </div>
 			
 			<div>
-				<a href="javascript:void(0))" class="show-hidden">Show Matrix Layers</a>
+				<a href="javascript:void(0))" class="show-hidden" data-toggle="tooltip" data-placement="top"
+					 title="Take a look at the matrix for each number">Show Matrix Layers</a>
 			</div>
 
       <div class="mastfoot">
@@ -221,7 +222,7 @@
 					$div = $("<div>").addClass("row");
 					for (var matrix = row * 3; matrix < (row * 3) + 3; matrix++) {
 						$matrixDiv = $('<div>').addClass("col-xs-4");
-						$title = $('<h3>').text("Matrix " + (matrix + 1));
+						$title = $('<h3>').text("Matrix for number " + (matrix + 1));
 						$matrixDiv.append($title);
 						$table = $('<table>');
 						for (var i = 0; i < 9; i++) {
