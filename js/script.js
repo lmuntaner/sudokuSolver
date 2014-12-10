@@ -11,15 +11,10 @@
     this.$el.find("#test-sudoku").on("click", this.testSudoku.bind(this));
     this.$el.find("#fill-solver-matrix").on("click", this.fill.bind(this));
     this.$el.find("div.number-buttons").on("click", "input", this.solveNumber.bind(this));
-    // this.$el.find("#1-button").on("click", this.solveNumber.bind(this));
     this.$el.find("#h-button").on("click", this.horizontals.bind(this));
-    // this.$el.find("#fake-h-button").on("click", this.fakeH.bind(this));
     this.$el.find("#v-button").on("click", this.verticals.bind(this));
-    // this.$el.find("#fake-v-button").on("click", this.fakeV.bind(this));
     this.$el.find("#d-button").on("click", this.deepLines.bind(this));
-    // this.$el.find("#fake-d-button").on("click", this.fakeD.bind(this));
     this.$el.find("#q-button").on("click", this.squares.bind(this));
-    // this.$el.find("#fake-q-button").on("click", this.fakeQ.bind(this));
     this.$el.find("#solve").on("click", this.solve.bind(this));
   };
   
@@ -33,21 +28,11 @@
     this.sumH(true);
     this.write();
   };
-
-  SGame.prototype.fakeH = function () {
-    this.fillSolverMatrix();
-    this.sumH(false);
-  };
   
   SGame.prototype.verticals = function () {
     this.fillSolverMatrix();
     this.sumV(true);
     this.write();
-  };
-
-  SGame.prototype.fakeV = function () {
-    this.fillSolverMatrix();
-    this.sumV(false);
   };
   
   SGame.prototype.deepLines = function () {
@@ -55,21 +40,11 @@
     this.sumD(true);
     this.write();
   };
-
-  SGame.prototype.fakeD = function () {
-    this.fillSolverMatrix();
-    this.sumD(false);
-  };
   
   SGame.prototype.squares = function () {
     this.fillSolverMatrix();
     this.sumQ(true);
     this.write();
-  };
-
-  SGame.prototype.fakeQ = function () {
-    this.fillSolverMatrix();
-    this.sumQ(false);
   };
   
   SGame.prototype.solveNumber = function (event) {
@@ -113,6 +88,8 @@
         $('#' + id).val(test[i][j]);
   		};
   	};
+		this.fillSolverMatrix();
+		this.write();
   };
   
   // Fills the tables below the buttons on the html
