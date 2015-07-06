@@ -1,3 +1,7 @@
+.sudoku-title {
+  position: relative;
+}
+
 /* Main sudoku container */
 
 div.sudoku-container {
@@ -98,10 +102,3 @@ div.general-buttons {
 div.container-solve-button .solve-button {
   margin-top: 12px;
 }
-
-
-
-
-
-
-

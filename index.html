@@ -37,7 +37,7 @@
 
     <div class="cover-container">
 
-      <div class="masthead clearfix">
+      <div class="masthead clearfix sudoku-menu">
         <div class="inner">
           <h3 class="masthead-brand">Sudoku Solver</h3>
           <nav>
@@ -58,11 +58,11 @@
           </nav>
         </div>
       </div>
-      
-      <div>
+
+      <div class="sudoku-title">
         <h1>Solve a sudoku step by step</h1>
       </div>
-      
+
       <div class="sudoku-container">
       	<div class="sudoku-table">
 					<script type="text/javascript">
@@ -86,7 +86,7 @@
 						}
 						$('div.sudoku-table').append($table);
 					</script>
-					
+
           <div class="test-button">
             <input id="test-sudoku"
 									 class="btn btn-primary"
@@ -96,7 +96,7 @@
 									 data-toggle="tooltip" data-placement="bottom" title="Fill with an example">
           </div>
         </div>
-        
+
         <div class="sudoku-buttons">
           <div class="number-buttons">
             <h3>Check number</h3>
@@ -191,11 +191,11 @@
             <input id="solve" class="btn btn-danger solve-button" type="button"
 									 name="Solve" value="Solve"
 									 data-toggle="tooltip" data-placement="bottom"
-									 title="Solve the Sudoku!">            
+									 title="Solve the Sudoku!">
           </div>
         </div>
       </div>
-			
+
 			<div>
 				<a href="javascript:void(0))" class="show-hidden" data-toggle="tooltip" data-placement="top"
 					 title="Take a look at the matrix for each number">Show Matrix Layers</a>
@@ -255,7 +255,7 @@
 										.addClass("sum")
 										.attr("id", "sum-k" + matrix + "-j" + l);
 							$td.append($input);
-							$row.append($td);			
+							$row.append($td);
 						}
 						$table.append($row);
 						$matrixDiv.append($table);
@@ -265,15 +265,15 @@
 				}
 			</script>
 	</div>
-    
+
     <script>
     var $el = $('.cover-container');
     var game = new Sudoku.SGame($el);
-		
+
 		$(function () {
 		  $('[data-toggle="tooltip"]').tooltip()
 		});
-		
+
 		$('.show-hidden').on("click", function () {
 			if ($('.sudoku_solving').css('display') === 'none') {
 				$('.sudoku_solving').css('display', 'block');
@@ -283,7 +283,7 @@
 				$('.show-hidden').text("Show Matrix Layers");
 			}
 		})
-		
+
     </script>
 </body>
 
